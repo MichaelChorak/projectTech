@@ -4,8 +4,21 @@
   "description": "Week 1 project tech, boilerplate voor een feature",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nodemon index.js"
   },
   "author": "Michael Chorak",
-  "license": "ISC"
+  "license": "MIT",
+  "repository": "https://github.com/MichaelChorak/projectTech/tree/main/back-end",
+  "bugs": {
+    "url": "https://github.com/MichaelChorak/projectTech/issues"
+  },
+  "files": [
+    "index.js"
+  ],
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "dependencies": {
+    "camelcase": "^6.2.0"
+  }
 }
