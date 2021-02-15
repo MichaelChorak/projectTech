@@ -4,32 +4,36 @@ const app = express()
 const port = 3000;
 
 
+
 const movies = [
-  {title: "333", genre: "333", jaartal: "3333",
-  title: "3433", genre: "334443", jaartal: "3333433",
-  title: "3vfff33", genre: "3v b33", jaartal: "3rfv333"
-}
+    {title: "333", genre: "333", jaartal: "3333",
+    title: "3433", genre: "334443", jaartal: "3333433",
+    title: "3vfff33", genre: "3v b33", jaartal: "3rfv333"
+  }
 ]
 
-
-app.engine('handlebars', exphbs());
-app.set('view engine', 'handlebars');
+//standaard layout is nu main.hbs en extensie naam is veranderd naar .hbs
+app.engine('hbs', exphbs({
+  defaultLayout: 'main',
+  extname: '.hbs'
+}));
+app.set('view engine', 'hbs');
 
 app.use(express.static('public'));
 
 app.get('/movies', (req, res) => {
-  res.render('listOfMovies', {title: "List of Movies", movies})
+  res.render('listOfMovies', {title:"Een lijst met filmpjes", movies})
 });
 
-
+//homepagina render
 app.get('/', (req, res) => {
-  res.render('home', {})
+  res.render('home')
 });
 
-
-app.get('/movies', (req, res) => {
-  res.send('A list of movies')
-});
+//moviepagina render
+// app.get('/movies', (req, res) => {
+//   res.send('A list of movies')
+// });
 
 
 app.listen(port, () => {
