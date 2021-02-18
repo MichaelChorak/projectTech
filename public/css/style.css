@@ -7,27 +7,47 @@ header  {
   width: 100%;
   height: 10vh;
   position: relative;
-  background-color: #00308F;
+  background-color: #fff;
 }
 
-header > button {
+
+
+header::after {
+  content: "Boardgames";
   position: absolute;
-  background: none;
+  top: 0;
+  left:0;
+  background-color: lightblue;
+  width: 100%;
+  height: 100%;
+  border-bottom-left-radius:50%;
+  border-bottom-right-radius:50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 1.5em;
+  font-family: 'Bebas Neue', cursive;
+}
+
+
+section:first-of-type {
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
   border: none;
-  margin: 3% 0 0 2%;
+  margin-top: 10vh;
 }
 
-header > button > svg {
-  fill: #ffffff;
-}
-
-
-
-header > section {
-  width: 50vh;
-  height: 100vh;
-  background-color: #002D62;
-  transform: translateX(-100%);
-  position: sticky;
-
+.submitKnop {
+  width: 50%;
+  margin-top: 10%;
 }
