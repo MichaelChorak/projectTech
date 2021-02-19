@@ -5,19 +5,50 @@ body {
 
 header  {
   width: 100%;
-  height: 10vh;
+  height: 20vh;
   position: relative;
-  background-color: #fff;
+  background-color: #ffffff;
 }
 
+h1 {
+  color:  #1574F6;
+  font-family: 'Bebas Neue', cursive;
+  font-weight: 100;
+  font-size: 2em;
+}
 
+form {
+  margin: 10%;
+}
+
+label {
+color:  #1574F6;
+}
+
+a {
+  color: #1574F6;
+  display: block;
+  width: 95%;
+  margin-top: 5%;
+  text-align: center;
+}
+
+input {
+border: 0;
+outline: 0;
+border-bottom: 2px solid lightgray;
+font-size: 1.4rem;
+color: #ccc;
+width: 90%;
+margin-bottom: 20%;
+}
 
 header::after {
-  content: "Boardgames";
+  content: "Player Connection";
   position: absolute;
   top: 0;
   left:0;
-  background-color: lightblue;
+  background-color: #1574F6;
   width: 100%;
   height: 100%;
   border-bottom-left-radius:50%;
@@ -31,23 +62,48 @@ header::after {
 }
 
 
+
 section:first-of-type {
-  height: 70vh;
-  width: 100%;
+  height: 80vh;
+  width: 99%;
   display: flex;
   justify-content: center;
+  position: absolute;
+  margin-top: -6vh;
 
 }
 
-fieldset {
+/* container */
+section:first-of-type > div {
+  width: 80%;
+  height: 90%;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 4px 20px 0px rgba(117,111,117,0.7);
+  -moz-box-shadow: 0px 4px 20px 0px rgba(117,111,117,0.7);
+  box-shadow: 0px 4px 20px 0px rgba(117,111,117,0.7);
+  background-color: #ffffff;
+}
+
+/* bevat de h1 */
+section:first-of-type > div > div:nth-of-type(1) {
+  text-align: center;
+}
+/* hier is de form */
+section:first-of-type > div > div:nth-of-type(2) {
   display: flex;
-  flex-direction: column;
-  width: 50%;
-  border: none;
-  margin-top: 10vh;
+  justify-content: flex-start;
+  height: 50%;
+  align-items: center;
 }
 
 .submitKnop {
-  width: 50%;
-  margin-top: 10%;
+  background-color: #1574F6;
+  color: #ffffff;
+  border: none;
+  height: 7vh;
+  border-radius: 10px;
+  margin: 0;
+  -webkit-box-shadow: 0px 4px 20px 0px rgba(129,142,230,1);
+-moz-box-shadow: 0px 4px 20px 0px rgba(129,142,230,1);
+box-shadow: 0px 0px 8px 0px rgba(129,142,230,1);
 }
