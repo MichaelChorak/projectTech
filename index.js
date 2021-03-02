@@ -1,20 +1,30 @@
 
 
-const dbInfo = require('dotenv').config();
-var config = require('./process.env');
+const dotenv = require('dotenv').config();
+const config = require('./process.env');
 const express = require('express');
 const exphbs = require('express-handlebars');
 const app = express();
 const port = 3000;
 const bodyParser = require('body-parser');
-const db = require('mongodb');
-db.connect({
-  host: process.env.DB_HOST,
-  username: process.env.DB_USER,
-  password: process.env.DB_PASS,
-});
+const { MongoClient } = require('mongodb');
 
-
+const uri = "mongodb+srv://maikiew:Chorak12l3c1%21@cluster0.fiihw.mongodb.net/test?authSource=admin&replicaSet=atlas-r4sakp-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true";
+const db = new MongoClient(uri, {useUnifiedTopology: true});
+db.connect();
+async function run() {
+  try {
+    // Connect the client to the server
+    await db.connect();
+    // Establish and verify connection
+    await db.db("admin").command({ ping: 1 });
+    console.log("Connected successfully to server");
+  } finally {
+    // Ensures that the client will close when you finish/error
+    await db.close();
+  }
+}
+run().catch(console.dir);
 
 app.use(bodyParser.urlencoded({ extended: true}));
 
