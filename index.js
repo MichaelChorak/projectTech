@@ -1,16 +1,23 @@
-const express = require('express')
+
+
+const dbInfo = require('dotenv').config();
+var config = require('./process.env');
+const express = require('express');
 const exphbs = require('express-handlebars');
-const app = express()
+const app = express();
 const port = 3000;
+const bodyParser = require('body-parser');
+const db = require('mongodb');
+db.connect({
+  host: process.env.DB_HOST,
+  username: process.env.DB_USER,
+  password: process.env.DB_PASS,
+});
 
 
 
-const movies = [
-    {title: "333", genre: "333", jaartal: "3333",
-    title: "3433", genre: "334443", jaartal: "3333433",
-    title: "3vfff33", genre: "3v b33", jaartal: "3rfv333"
-  }
-]
+app.use(bodyParser.urlencoded({ extended: true}));
+
 
 //standaard layout is nu main.hbs en extensie naam is veranderd naar .hbs
 app.engine('hbs', exphbs({
@@ -27,7 +34,7 @@ app.get('/movies', (req, res) => {
 
 //homepagina render
 app.get('/', (req, res) => {
-  res.render('home')
+  res.render('home');
 });
 
 //moviepagina render

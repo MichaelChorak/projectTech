@@ -80,7 +80,7 @@ section:first-of-type > div {
   border-radius: 10px;
   -webkit-box-shadow: 0px 4px 20px 0px rgba(117,111,117,0.7);
   -moz-box-shadow: 0px 4px 20px 0px rgba(117,111,117,0.7);
-  box-shadow: 0px 4px 20px 0px rgba(117,111,117,0.7);
+  box-shadow: 1px 2px 4px 0px rgb(117 111 117 / 70%);
   background-color: #ffffff;
 }
 
