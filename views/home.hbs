@@ -1,17 +1,11 @@
 <section>
   <div>
-    <div>
-      <h1>Hi, Welkom</h1>
-    </div>
-    <div>
-      <form class="" action="login.hbs" method="post">
-        <label for="username">Gebruikersnaam</label>
-          <input type="text" name="username" value="">
-        <label for="password">Wachtwoord</label>
-          <input type="password" name="" value="">
-        <input type="submit" value="Inloggen" class="submitKnop">
+      <p>Hallo, wat leuk dat je er bent. Om een juiste match te vinden hebben we eerst wat informatie van u nodig.</p>
+      <form class="" action="/addname" method="post">
+        <input type="text" name="naam" value="" placeholder="Naam" required>
+          <input type="option" name="leeftijd" value="" placeholder="Leeftijd" required>
+            <input type="text" name="hallo" value="" placeholder="Hallo"  required>
+            <button type="submit" name="button">Volgende</button>
       </form>
-    </div>
-    <a href="register.hbs">Nog geen account? Klik hier om te registreren</a>
   </div>
 </section>

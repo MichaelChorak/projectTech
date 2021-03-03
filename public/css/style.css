@@ -17,8 +17,37 @@ h1 {
   font-size: 2em;
 }
 
+p {
+  color:  #f64315;
+  font-family: 'Bebas Neue', cursive;
+  margin:
+}
+
 form {
-  margin: 10%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5%;
+}
+
+::placeholder {
+  color: red;
+  font-size: 16px;
+  font-family: 'Bebas Neue', cursive;
+  font-weight: 100;
+}
+
+form button {
+  width: 40%;
+  height: 6vh;
+  margin: 1em;
+  position: absolute;
+  bottom: 5vh;
+  left: 30%;
+  background: linear-gradient(to right, #ff105f, #ed8787);
+  border-radius: 30px;
+  border: 0;
+  color: #fff;
+  outline: none;
 }
 
 label {
@@ -36,11 +65,11 @@ a {
 input {
 border: 0;
 outline: 0;
-border-bottom: 2px solid lightgray;
+border-bottom: 2px solid #f5e3e3;
 font-size: 1.4rem;
 color: #ccc;
 width: 90%;
-margin-bottom: 20%;
+margin-bottom: 5%;
 }
 
 header::after {
@@ -48,9 +77,9 @@ header::after {
   position: absolute;
   top: 0;
   left:0;
-  background-color: #1574F6;
+  background-color: #f64315;
   width: 100%;
-  height: 100%;
+  height: 80%;
   border-bottom-left-radius:50%;
   border-bottom-right-radius:50%;
   display: flex;
@@ -73,15 +102,17 @@ section:first-of-type {
 
 }
 
-/* container */
+/* container voor gegevens */
 section:first-of-type > div {
   width: 80%;
-  height: 90%;
-  border-radius: 10px;
-  -webkit-box-shadow: 0px 4px 20px 0px rgba(117,111,117,0.7);
-  -moz-box-shadow: 0px 4px 20px 0px rgba(117,111,117,0.7);
-  box-shadow: 1px 2px 4px 0px rgb(117 111 117 / 70%);
+  position: relative;
+  height: 70%;
   background-color: #ffffff;
+  margin-top: 15vh;
+}
+
+section:first-of-type > div > div > p {
+  margin: 10%;
 }
 
 /* bevat de h1 */
@@ -90,20 +121,42 @@ section:first-of-type > div > div:nth-of-type(1) {
 }
 /* hier is de form */
 section:first-of-type > div > div:nth-of-type(2) {
-  display: flex;
-  justify-content: flex-start;
-  height: 50%;
-  align-items: center;
+  height: auto;
 }
 
 .submitKnop {
   background-color: #1574F6;
   color: #ffffff;
   border: none;
-  height: 7vh;
-  border-radius: 10px;
+  height: 6vh;
+  border-radius: 6px;
   margin: 0;
-  -webkit-box-shadow: 0px 4px 20px 0px rgba(129,142,230,1);
--moz-box-shadow: 0px 4px 20px 0px rgba(129,142,230,1);
-box-shadow: 0px 0px 8px 0px rgba(129,142,230,1);
+  -webkit-box-shadow: 0px 4px 20px 0px rgb(129 142 230);
+  -moz-box-shadow: 0px 4px 20px 0px rgba(129,142,230,1);
+  box-shadow: 0px 0px 8px 0px rgb(129 142 230);
+  position: absolute;
+  bottom: 18px;
+  width: 63vw;
+
+}
+
+
+/* checkbox styling */
+.checkbox {
+  width: 5vw;
+  margin: 0;
+  float: left;
+  margin-right: 1vw;
+}
+
+
+form > label:nth-of-type(3) {
+  display: block;
+  font-weight: 700;
+  font-size: 1em;
+}
+
+
+.naarRechts {
+  transform: translateX(100vw);
 }
