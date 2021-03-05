@@ -1,118 +1,148 @@
 body {
   margin: 0;
   padding: 0;
+  background-color:  var(--main-color);
+  box-sizing: border-box;
+}
+
+:root {
+  --main-color: #dae3c2;
+  --main-font: 'Krona One', sans-serif;
+  --secondary-color: #171616cc;
 }
 
 header  {
   width: 100%;
-  height: 20vh;
+  height: 10vh;
   position: relative;
-  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  color: #fff;;
+  background-color: var(--secondary-color);
 }
 
 h1 {
   color:  #1574F6;
-  font-family: 'Bebas Neue', cursive;
   font-weight: 100;
   font-size: 2em;
 }
 
-p {
-  color:  #f64315;
-  font-family: 'Bebas Neue', cursive;
-  margin:
+h1,h2,h3,h4,p {
+      font-family: var(--main-font);
 }
 
-form {
+
+/* Styling voor de form op de confirm pagina */
+section:first-of-type > form {
   display: flex;
   flex-direction: column;
-  margin-top: 5%;
+  justify-content: center;
+  align-items: center;
+  width: 70vw;
+  height: 90vh;
 }
 
-::placeholder {
+/* de 4 knoppen op het formulier */
+section:first-of-type > form > section > p {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ededed;
+  display: inline-flex;
+  margin: 1%;
+}
+section:first-of-type > form > div {
+  display: none;
+}
+
+/* styling for de nxt en prev form buttons */
+.formBtn {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  margin-top: 5em;
+}
+
+span {
+  display: block;
   color: red;
+}
+
+/* input[type="radio"]{
+  display: inline-flex;
+} */
+
+#nextIcons {
+  width: 100%;
+  height: 20%;
+  text-align: center;
+  float: right;
+  position: initial;
+}
+
+/* Placeholder text voor de forms */
+::placeholder {
+  color: var(--secondary-color);
   font-size: 16px;
-  font-family: 'Bebas Neue', cursive;
+  font-family: var(--main-font);
   font-weight: 100;
 }
 
-form button {
-  width: 40%;
-  height: 6vh;
-  margin: 1em;
-  position: absolute;
-  bottom: 5vh;
-  left: 30%;
-  background: linear-gradient(to right, #ff105f, #ed8787);
-  border-radius: 30px;
-  border: 0;
-  color: #fff;
-  outline: none;
-}
-
-label {
-color:  #1574F6;
-}
-
-a {
-  color: #1574F6;
-  display: block;
-  width: 95%;
-  margin-top: 5%;
-  text-align: center;
-}
-
+/* input styling van de form */
 input {
 border: 0;
 outline: 0;
-border-bottom: 2px solid #f5e3e3;
+border-bottom: 2px dotted var(--secondary-color);
 font-size: 1.4rem;
-color: #ccc;
+color: var(--main-color);
 width: 90%;
 margin-bottom: 5%;
+background: none;
+background-color: var(--main-color) !important;
 }
 
-header::after {
-  content: "Player Connection";
-  position: absolute;
-  top: 0;
-  left:0;
-  background-color: #f64315;
-  width: 100%;
-  height: 80%;
-  border-bottom-left-radius:50%;
-  border-bottom-right-radius:50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #ffffff;
-  font-size: 1.5em;
-  font-family: 'Bebas Neue', cursive;
-}
-
-
-
+/* Eerste section na de header, container voor de overige elementen */
 section:first-of-type {
-  height: 80vh;
-  width: 99%;
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  margin-top: -6vh;
-
+height: 80vh;
+width: 99%;
+display: flex;
+justify-content: center;
+position: absolute;
 }
 
 /* container voor gegevens */
-section:first-of-type > div {
-  width: 80%;
-  position: relative;
-  height: 70%;
-  background-color: #ffffff;
-  margin-top: 15vh;
+section:first-of-type {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-section:first-of-type > div > div > p {
-  margin: 10%;
+/* intro text sytling */
+
+
+/* section:first-of-type > p {
+  font-size: 12px;
+  overflow: hidden;
+  border-right: .15em solid orange;
+  white-space: nowrap;
+  margin: 0 auto;
+  animation: typing 3.5s steps(40, end),
+  blink-caret .75s step-end infinite;
+  margin-top: -20%;
+  } */
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 55vw; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
 }
 
 /* bevat de h1 */
@@ -140,23 +170,64 @@ section:first-of-type > div > div:nth-of-type(2) {
 
 }
 
-
-/* checkbox styling */
-.checkbox {
-  width: 5vw;
-  margin: 0;
-  float: left;
-  margin-right: 1vw;
+/* hier komt de animatie voor bevestiving inleveren informatie, confirm */
+.circle {
+  height: 25vw !important;
+  width: 100%;
+  position: absolute !important;
+  bottom: 0;
+  border-radius: 100px;
+  animation-name: animationCircle;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-direction: alternate;
+  background-image: url("../images/puzzle.png");
+  background-position: center;
+  background-size: 10em;
+  background-repeat: no-repeat;
 }
 
+/* intro text op confirm pagina */
 
-form > label:nth-of-type(3) {
-  display: block;
-  font-weight: 700;
-  font-size: 1em;
+
+@keyframes animationCircle {
+  0%{bottom: 0%; transform: scale(0) rotate3d(0deg);}
+  100%{bottom: 50%; transform: scale(1) rotate3d(-1, 1, 0, 360deg);}
 }
 
+/* confirm text slowshow */
+@keyframes showSlow {
+  0%{opacity: 0;}
+  100%{opacity: 1}
+}
+/* Dit is de container voor confirm */
+.centrum {
+  text-align: center;
+}
+.centrum > h3 {
+  position: absolute;
+  bottom: 30vh;
+  left: calc(50% - (113px /2));
+  animation: showSlow;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+}
 
-.naarRechts {
-  transform: translateX(100vw);
+form > button {
+  position: absolute;
+  bottom: 10vh;
+  left: 30%;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-family: var(--main-font);
+  height: 6vh;
+  width: 40vw;
+  border-radius: 100px;
+  background-color: var(--secondary-color);
+  animation: showSlow;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
 }

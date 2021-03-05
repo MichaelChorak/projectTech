@@ -1,11 +1,48 @@
 <section>
-  <div>
-      <p>Hallo, wat leuk dat je er bent. Om een juiste match te vinden hebben we eerst wat informatie van u nodig.</p>
-      <form class="" action="/addname" method="post">
-        <input type="text" name="naam" value="" placeholder="Naam" required>
-          <input type="option" name="leeftijd" value="" placeholder="Leeftijd" required>
-            <input type="text" name="hallo" value="" placeholder="Hallo"  required>
-            <button type="submit" name="button">Volgende</button>
+
+      <form class="" action="/addme" method="post">
+        <div class="formDiv">
+          <label for="name">Naam</label>
+          <input type="text" name="name" value="">
+            <span></span>
+
+          <label for="email">Email</label>
+          <input type="email" name="email" value="">
+            <span></span>
+        </div>
+
+        <div class="formDiv">
+          <label for="woonplaats">Woonplaats</label>
+          <input type="text" name="woonplaats" value="">
+            <span></span>
+
+          <label for="huisdier">Huisdier</label>
+          <input type="text" name="huisdiet" value="">
+            <span></span>
+        </div>
+
+        <div class="formDiv">
+          <label for="geslacht">geslacht</label>
+          <input type="radio" name="gender" value="man">
+          <input type="radio" name="gender" value="vrouw">
+          <input type="radio" name="gender" value="geit">
+            <span></span>
+
+          <label for="image">Profile pic</label>
+          <input type="file" name="image" value="">
+            <span></span>
+        </div>
+        <button type="button" name="button" class="formBtn">Vorige</button>
+        <button type="button" name="button" class="formBtn">Next</button>
+        <!-- <button type="submi" name="button" value="Submit" id="submitBtn"></button> -->
+        <section id="nextIcons">
+          <p></p>
+          <p></p>
+          <p></p>
+
+        </section>
+
+
       </form>
-  </div>
+
 </section>

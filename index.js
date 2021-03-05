@@ -1,16 +1,15 @@
 
 
-const dotenv = require('dotenv').config();
-const config = require('./process.env');
+const dotenv = require('dotenv').config(); //env files
 const express = require('express');
+const lodash = require('lodash');
 const exphbs = require('express-handlebars');
-var url = "mongodb://localhost:27017/";
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 const app = express();
 const port = 3000;
 const bodyParser = require('body-parser');
 const { MongoClient } = require('mongodb');
-const uri = "mongodb+srv://maikiew:Chorak12l3c1%21@cluster0.fiihw.mongodb.net/test?authSource=admin&replicaSet=atlas-r4sakp-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true";
+const uri = `mongodb+srv://maikiew:${process.env.DB_PASS}%21@cluster0.fiihw.mongodb.net/test?authSource=admin&replicaSet=atlas-r4sakp-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true`;
 const db = new MongoClient(uri, {useUnifiedTopology: true});
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(express.json());
@@ -32,8 +31,6 @@ run().catch(console.dir);
 
 
 
-
-
 //standaard layout is nu main.hbs en extensie naam is veranderd naar .hbs
 app.engine('hbs', exphbs({
   defaultLayout: 'main',
@@ -43,13 +40,17 @@ app.set('view engine', 'hbs');
 
 app.use(express.static('public'));
 
-app.get('/movies', (req, res) => {
-  res.render('listOfMovies', {title:"Een lijst met filmpjes", movies})
+// app.get('/movies', (req, res) => {
+//   res.render('listOfMovies', {title:"Een lijst met filmpjes", movies})
+// });
+
+app.get('/confirm', (req, res) => {
+  res.render('home')
 });
 
 //homepagina render
 app.get('/', (req, res) => {
-  res.render('home');
+  res.render('confirm');
 });
 
 app.post("/addname", (req, res) => {
@@ -63,18 +64,13 @@ app.post("/addname", (req, res) => {
           },
           function(err, result) {
               if (err) throw err;
-              res.json(result);
+            res.redirect('/confirm'); //here the redirect takes place.
               db.close();
           });
       });
 });
 
 
-
-//moviepagina render
-// app.get('/movies', (req, res) => {
-//   res.send('A list of movies')
-// });
 
 
 app.listen(port, () => {
