@@ -24,13 +24,21 @@ header  {
 }
 
 h1 {
-  color:  #1574F6;
   font-weight: 100;
   font-size: 2em;
 }
 
-h1,h2,h3,h4,p {
+h1,h2,h3,h4,p,label{
       font-family: var(--main-font);
+}
+
+/* Eerste section na de header, container voor de overige elementen */
+section:first-of-type {
+  height: 80vh;
+  width: 99%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
 }
 
 
@@ -39,7 +47,7 @@ section:first-of-type > form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   width: 70vw;
   height: 90vh;
 }
@@ -96,21 +104,14 @@ border: 0;
 outline: 0;
 border-bottom: 2px dotted var(--secondary-color);
 font-size: 1.4rem;
-color: var(--main-color);
+color: #2d3b08;
 width: 90%;
 margin-bottom: 5%;
 background: none;
 background-color: var(--main-color) !important;
 }
 
-/* Eerste section na de header, container voor de overige elementen */
-section:first-of-type {
-height: 80vh;
-width: 99%;
-display: flex;
-justify-content: center;
-position: absolute;
-}
+
 
 /* container voor gegevens */
 section:first-of-type {
@@ -230,4 +231,17 @@ form > button {
   animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-timing-function: ease-in;
+}
+
+/* Hier begint de CSS styling for de gebruikers lijst -SECTION- */
+
+.gebruikerSection {
+  width: 100% !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+}
+
+.gebruikerSection > ul > li {
+  list-style-type: none;
 }

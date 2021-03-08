@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="css/style.css">
+
+<section>
+  <form class="" action="/addname" method="post">
+    <input type="text" name="naam" value="" placeholder="Naam" required>
+    <input type="number" name="leeftijd" value="" placeholder="Leeftijd" required>
+    <input type="email" name="email" value="" placeholder="email" required>
+
+    <label for="favspel">Geïnteresseerd in</label>
+      <select name="favspel">
+        <option value="gezelschapspellen">Gezelschap spellen</option>
+        <option value="wargames">Wargames</option>
+        <option value="eurogames">Eurogames</option>
+        <option value="ameritrash">Ameritrash</option>
+      </select>
+
+      <label for="provincies">Waar komt u vandaan?</label>
+        <select name="provincie">
+          {{#each provincies}}
+          <option value="{{this.name}}">{{this.name}}</option>
+          {{/each}}
+        </select>
+
+    <button type="submit" name="button">Volgende</button>
+  </form>
+
+</section>
