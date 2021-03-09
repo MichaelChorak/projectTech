@@ -1,19 +1,16 @@
-<link rel="stylesheet" href="css/gebruikers.css">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/filterCss.css">
 
 
 <section>
-  <h4>Alle spelers op een rijtje</h4>
+  <h4>Wie wordt jouw match?</h4>
 <table>
   <table>
     <tr>
-      <th>Naam</th>
       <th>Categorie</th>
       <th>Provincie</th>
     </tr>
-          {{#each gebruikers}}
+          {{#each renderData}}
     <tr>
-      <td>{{this.naam}}</td>
       <td>{{this.favspel}}</td>
       <td>{{this.provincie}}</td>
     </tr>

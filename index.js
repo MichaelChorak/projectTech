@@ -7,6 +7,8 @@ const app = express();
 const port = 3000;
 const userSchema = require('./schema/user-schema');
 const bodyParser = require('body-parser');
+var http = require("http");
+
 // const routes =  require('./routes/router');
 
 // verbinding maken met de database
@@ -74,16 +76,39 @@ app.get('/gebruikersdb', async (req, res) => {
   });
 });
 
+
+
 //homepagina render
 app.get('/', (req, res) => {
   res.render('home')
 });
 
 
+app.get('/zoeken', (req, res) => {
+  res.render('filter');
+});
+
+
+
+app.post('/zoeken', async (req, res) => {
+MongoClient.connect(uri, async function(err, db) {
+    let dbo = db.db('users');
+    let customers = await dbo.collection('customers');
+    let renderData = await dbo.collection('customers').find(
+     {
+      provincie: req.body.provincie,
+      favspel: req.body.favspel
+    }).toArray()
+
+    console.log(renderData);
+    res.render('matches', {
+      renderData
+    })
+  })
+})
+
 
 app.get('/index', (req, res) => {
-
-
   res.render('landingspagina');
 })
 
@@ -101,19 +126,6 @@ app.get('/register', async (req, res) => {
     });
   });
 });
-
-
-//proberen zoek functie te maken
-
-// userSchema.find({naam: 'Michael'},(error, data) =>{
-//   if(error){
-//     console.log(error);
-//   }else{
-//     console.log(data);
-//   }
-// });
-//
-
 
 
 //Hier kunnen mensen informatie invullen en wordt geplaatst in de database users en in de collection 'customers'

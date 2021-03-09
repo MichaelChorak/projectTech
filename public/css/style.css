@@ -6,7 +6,7 @@ body {
 }
 
 :root {
-  --main-color: #dae3c2;
+  --main-color: #f0f0f0;
   --main-font: 'Krona One', sans-serif;
   --secondary-color: #171616cc;
 }
@@ -22,6 +22,61 @@ header  {
   color: #fff;;
   background-color: var(--secondary-color);
 }
+
+#menuIcon {
+  width: 15%;
+  height: 50%;
+  position: absolute;
+  left: 1em;
+  background-image: url(../images/filter.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#menu {
+  height: 60vh;
+  width: 60vw;
+  background-color: #ffffff;
+  border: 1px solid;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1;
+  visibility: hidden;
+}
+
+#menu >  ul {
+  margin: 0;
+  padding: 0;
+}
+
+#menu > ul > li > a{
+  text-decoration: none;
+  font-family: var(--main-font);
+}
+
+.laatMenuZien {
+  animation: slowShow;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  visibility: visible !important;
+}
+
+/* confirm text slowshow */
+@keyframes showSlow {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+#menu > h3 {
+  font-size: 1em;
+  color: #000;
+}
+
+
 
 h1 {
   font-weight: 100;
@@ -119,6 +174,15 @@ section:first-of-type {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+section:first-of-type > p {
+  width: 75%;
+  margin: 0;
+  position: absolute;
+  top: 15%;
 }
 
 /* intro text sytling */
@@ -196,11 +260,7 @@ section:first-of-type > div > div:nth-of-type(2) {
   100%{bottom: 50%; transform: scale(1) rotate3d(-1, 1, 0, 360deg);}
 }
 
-/* confirm text slowshow */
-@keyframes showSlow {
-  0%{opacity: 0;}
-  100%{opacity: 1}
-}
+
 /* Dit is de container voor confirm */
 .centrum {
   text-align: center;

@@ -87,3 +87,56 @@ main > section > div:nth-of-type(2){
     opacity: 1;
   }
 }
+
+#menuIcon {
+  width: 15%;
+  height: 50%;
+  position: absolute;
+  left: 1em;
+  background-image: url(../images/filter.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#menu {
+  height: 60vh;
+  width: 60vw;
+  background-color: #ffffff;
+  border: 1px solid;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1;
+  visibility: hidden;
+}
+
+#menu >  ul {
+  margin: 0;
+  padding: 0;
+}
+
+#menu > ul > li > a{
+  text-decoration: none;
+  font-family: var(--main-font);
+}
+
+.laatMenuZien {
+  animation: slowShow;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  visibility: visible !important;
+}
+
+/* confirm text slowshow */
+@keyframes showSlow {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+#menu > h3 {
+  font-size: 1em;
+  color: #000;
+}

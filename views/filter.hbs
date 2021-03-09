@@ -1,7 +1,20 @@
-    <link rel="stylesheet" href="css/filterCss.css">
+<link rel="stylesheet" href="css/filterCss.css">
+
 
 <main>
   <section>
     <h1>Vindt je match</h1>
+    <form action="/zoeken" method="post">
+      <label for="provincie">Provincie:</label>
+      <select name="provincie" id="provincie">
+        <option value="Zuid-Holland">Zuid-Holland</option>
+      </select>
+
+      <label for="favspel">Categorie:</label>
+      <select name="favspel" id="favspel">
+        <option value="wargames">wargames</option>
+      </select>
+      <button type="submit">Zoeken</button>
+    </form>
   </section>
 </main>

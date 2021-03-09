@@ -6,9 +6,13 @@ body {
 }
 
 :root {
-  --main-color: #dae3c2;
+  --main-color: #f0f0f0;
   --main-font: 'Krona One', sans-serif;
   --secondary-color: #171616cc;
+}
+
+h4 {
+  font-family: var(--main-font);
 }
 
 header  {
@@ -31,5 +35,25 @@ li {
 section:first-of-type{
   width: 100%;
   height: auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
 
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
 }
