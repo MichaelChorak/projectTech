@@ -50,12 +50,12 @@ My code already includes a connection with the database, but my credentials has 
 
 ## Used sources
 
-[Mongoose](https://mongoosejs.com/docs/)
-[CRUD operations Mongoose](https://docs.mongodb.com/manual/crud/)
-[dotenv](https://www.npmjs.com/package/dotenv)
-[Express Handlebars](https://www.npmjs.com/package/express-handlebars)
-[Handlebars template engine](https://handlebarsjs.com/)
-[Bodyparser](https://www.npmjs.com/package/body-parser)
+* [Mongoose](https://mongoosejs.com/docs/)
+* [CRUD operations Mongoose](https://docs.mongodb.com/manual/crud/)
+* [dotenv](https://www.npmjs.com/package/dotenv)
+* [Express Handlebars](https://www.npmjs.com/package/express-handlebars)
+* [Handlebars template engine](https://handlebarsjs.com/)
+* [Bodyparser](https://www.npmjs.com/package/body-parser)
 
 ## Licenses
 
