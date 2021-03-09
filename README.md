@@ -34,7 +34,7 @@ With Github it's very to install these files to your computer. I will show you t
 ## Features
 
 - [x] Add your information to a database to be found for other users
-- [ ] Use the filter system to find certain users
+- [x] Use the filter system to find certain users
 
 ## Used sources
 
