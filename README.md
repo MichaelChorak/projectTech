@@ -31,6 +31,14 @@ With Github it's very to install these files to your computer. I will show you t
 
 ---
 
+## How to make it work?
+> Since it's a application which makes use of a database. You need to setup your own database & database connection
+
+There are different databases which could work, but this project is based on NodeJS __plus__ Mongoose.
+So i strongly advice you to read this document: * [Mongoose ~ Getting started](https://mongoosejs.com/docs/)
+
+---
+
 ## Features
 
 - [x] Add your information to a database to be found for other users
