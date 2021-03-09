@@ -35,7 +35,11 @@ With Github it's very to install these files to your computer. I will show you t
 > Since it's a application which makes use of a database. You need to setup your own database & database connection
 
 There are different databases which could work, but this project is based on NodeJS __plus__ Mongoose.
-So i strongly advice you to read this document: * [Mongoose ~ Getting started](https://mongoosejs.com/docs/)
+So i strongly advice you to read this document:  [Mongoose ~ Getting started](https://mongoosejs.com/docs/)
+
+I can also strongly recommend to use MongoDBCompas to easily check out what's happening behind the scenes and have a quick view at your Database, Schemes & more.
+
+My code already includes a connection with the database, but my credentials has to be replaced with yours. My password is stored in a .env file so it's not visible for outsiders. To make a connection, just create your own .env file with your credentials and you should be ready to go.
 
 ---
 
