@@ -57,6 +57,8 @@ My code already includes a connection with the database, but my credentials has 
 * [Handlebars template engine](https://handlebarsjs.com/)
 * [Bodyparser](https://www.npmjs.com/package/body-parser)
 
+> Resources moeten nog APA: https://www.scribbr.nl/bronnengenerator/apa/
+
 ## Licenses
 
 This project is licensed under MIT License.
