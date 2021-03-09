@@ -5,14 +5,19 @@
   <section>
     <h1>Vindt je match</h1>
     <form action="/zoeken" method="post">
-      <label for="provincie">Provincie:</label>
-      <select name="provincie" id="provincie">
-        <option value="Zuid-Holland">Zuid-Holland</option>
-      </select>
+      <label for="provincies">Waar wilt u spelen?</label>
+        <select name="provincie">
+          {{#each provincies}}
+          <option value="{{this.name}}">{{this.name}}</option>
+          {{/each}}
+        </select>
 
       <label for="favspel">Categorie:</label>
       <select name="favspel" id="favspel">
         <option value="wargames">wargames</option>
+        <option value="eurogames">eurogames</option>
+        <option value="gezelschapspellen">gezelschapspellen</option>
+        <option value="ameritrash">Ameritrash</option>
       </select>
       <button type="submit">Zoeken</button>
     </form>

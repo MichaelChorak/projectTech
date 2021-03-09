@@ -80,20 +80,37 @@ app.get('/gebruikersdb', async (req, res) => {
 
 //homepagina render
 app.get('/', (req, res) => {
+
   res.render('home')
 });
 
 
-app.get('/zoeken', (req, res) => {
-  res.render('filter');
+//zoek naar tegenstanders
+app.get('/zoeken', async (req, res) => {
+  MongoClient.connect(uri, async function(err, db) {
+  let dbo = db.db("users");
+  let provincies = await dbo.collection('provincies').find({}, {
+    sort: {
+      naam: 1
+    }
+  }).toArray();
+  res.render('filter', {
+    provincies
+    });
+  });
 });
 
 
-
+// hier posten we de zoek formulier naar matches en geven de waardes mee als een array met objecten
 app.post('/zoeken', async (req, res) => {
 MongoClient.connect(uri, async function(err, db) {
     let dbo = db.db('users');
     let customers = await dbo.collection('customers');
+    let provincies = await dbo.collection('provincies').find({}, {
+      sort: {
+        naam: 1
+      }
+    }).toArray();
     let renderData = await dbo.collection('customers').find(
      {
       provincie: req.body.provincie,
@@ -102,10 +119,12 @@ MongoClient.connect(uri, async function(err, db) {
 
     console.log(renderData);
     res.render('matches', {
-      renderData
+      renderData,
+      provincies
     })
   })
 })
+
 
 
 app.get('/index', (req, res) => {
@@ -128,7 +147,7 @@ app.get('/register', async (req, res) => {
 });
 
 
-//Hier kunnen mensen informatie invullen en wordt geplaatst in de database users en in de collection 'customers'
+//Hier kunnen mensen informatie invullen en wordt geplaatst in de database users en in de collection 'customers' **form**
 app.post("/addname", (req, res) => {
   MongoClient.connect(uri, function(err, db) {
     if (err) throw err;
@@ -142,7 +161,7 @@ app.post("/addname", (req, res) => {
       },
       function(err, result) {
         if (err) throw err;
-        res.redirect('/index'); //Hier wordt je naar toe gestuurd na submit
+        res.redirect('/zoeken'); //Hier wordt je naar toe gestuurd na submit
         db.close();
       });
   });

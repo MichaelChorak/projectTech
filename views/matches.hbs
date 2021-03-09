@@ -1,19 +1,21 @@
-<link rel="stylesheet" href="css/filterCss.css">
+<link rel="stylesheet" href="css/matches.css">
 
 
-<section>
-  <h4>Wie wordt jouw match?</h4>
-<table>
-  <table>
-    <tr>
-      <th>Categorie</th>
-      <th>Provincie</th>
-    </tr>
-          {{#each renderData}}
-    <tr>
-      <td>{{this.favspel}}</td>
-      <td>{{this.provincie}}</td>
-    </tr>
-        {{/each}}
-  </table>
-</section>
+<main>
+  <section>
+    <div>
+        <h3>Dit kunnen jouw tegenstanders zijn</h3>
+    </div>
+    {{#each renderData}}
+    <div class="matches">
+      <p>Naam: {{this.naam}}</p>
+      <p>Leeftijd: {{this.leeftijd}}</p>
+      <p> Categorie: {{this.favspel}}</p>
+      <p>Uit: {{this.provincie}}</p>
+      <button type="button" name="button">
+        MATCH!
+      </button>
+    </div>
+    {{/each}}
+  </section>
+</main>
