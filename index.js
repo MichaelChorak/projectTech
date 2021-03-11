@@ -60,7 +60,7 @@ app.listen(port, () => {
 // Voorderest geven we een title mee en het object gebruikers aan /gebruikersdb
 app.get('/gebruikersdb', async (req, res) => {
   MongoClient.connect(uri, async function(err, db) {
-    var dbo = db.db("users");
+    let dbo = db.db("users");
     gebruikers = await dbo.collection('customers').find({}, {
       sort: {
         naam: 1
@@ -128,7 +128,7 @@ app.get('/index', (req, res) => {
 //register render
 app.get('/register', async (req, res) => {
   MongoClient.connect(uri, async function(err, db) {
-    var dbo = db.db("users");
+    let dbo = db.db("users");
     provincies = await dbo.collection('provincies').find({}, {
       sort: {
         naam: 1
@@ -145,7 +145,7 @@ app.get('/register', async (req, res) => {
 app.post("/addname", (req, res) => {
   MongoClient.connect(uri, function(err, db) {
     if (err) throw err;
-    var dbo = db.db("users");
+    let dbo = db.db("users");
     dbo.collection("customers").insertOne({
         naam: req.body.naam,
         leeftijd: req.body.leeftijd,
