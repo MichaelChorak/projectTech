@@ -40,6 +40,8 @@ async function run() {
 }
 run().catch(console.dir);
 
+//even een kleine test
+
 //standaard layout is nu main.hbs en extensie naam is veranderd naar .hbs
 app.engine('hbs', exphbs({
   defaultLayout: 'main',
