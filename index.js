@@ -4,7 +4,7 @@ const lodash = require('lodash');
 const exphbs = require('express-handlebars');
 const mongoose = require('mongoose');
 const app = express();
-const port =  process.env.PORT || 3000;
+const port =  process.env.PORT || 5000;
 const userSchema = require('./schema/user-schema');
 const bodyParser = require('body-parser');
 var http = require("http");
@@ -51,7 +51,7 @@ app.use(express.static('public'));
 
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`Example app listening at http://localhost:${PORT}`)
 })
 
 
