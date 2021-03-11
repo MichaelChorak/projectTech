@@ -4,7 +4,7 @@ const lodash = require('lodash');
 const exphbs = require('express-handlebars');
 const mongoose = require('mongoose');
 const app = express();
-const port = 3000;
+const port =  process.env.PORT || 3000;
 const userSchema = require('./schema/user-schema');
 const bodyParser = require('body-parser');
 var http = require("http");
@@ -55,9 +55,6 @@ app.listen(port, () => {
 })
 
 
-
-
-
 // We maken connectie met de database, gaan naar db users en in users zoeken we collection customers
 // Daarna wordt dit een object bestaande uit een array met alle customers en deze worden gesorteerd op naam
 // Voorderest geven we een title mee en het object gebruikers aan /gebruikersdb
@@ -77,7 +74,6 @@ app.get('/gebruikersdb', async (req, res) => {
 });
 
 
-
 //homepagina render
 app.get('/', (req, res) => {
 
@@ -88,14 +84,14 @@ app.get('/', (req, res) => {
 //zoek naar tegenstanders
 app.get('/zoeken', async (req, res) => {
   MongoClient.connect(uri, async function(err, db) {
-  let dbo = db.db("users");
-  let provincies = await dbo.collection('provincies').find({}, {
-    sort: {
-      naam: 1
-    }
-  }).toArray();
-  res.render('filter', {
-    provincies
+    let dbo = db.db("users");
+    let provincies = await dbo.collection('provincies').find({}, {
+      sort: {
+        naam: 1
+      }
+    }).toArray();
+    res.render('filter', {
+      provincies
     });
   });
 });
@@ -103,7 +99,7 @@ app.get('/zoeken', async (req, res) => {
 
 // hier posten we de zoek formulier naar matches en geven de waardes mee als een array met objecten
 app.post('/zoeken', async (req, res) => {
-MongoClient.connect(uri, async function(err, db) {
+  MongoClient.connect(uri, async function(err, db) {
     let dbo = db.db('users');
     let customers = await dbo.collection('customers');
     let provincies = await dbo.collection('provincies').find({}, {
@@ -111,8 +107,7 @@ MongoClient.connect(uri, async function(err, db) {
         naam: 1
       }
     }).toArray();
-    let renderData = await dbo.collection('customers').find(
-     {
+    let renderData = await dbo.collection('customers').find({
       provincie: req.body.provincie,
       favspel: req.body.favspel
     }).toArray()
@@ -124,7 +119,6 @@ MongoClient.connect(uri, async function(err, db) {
     })
   })
 })
-
 
 
 app.get('/index', (req, res) => {

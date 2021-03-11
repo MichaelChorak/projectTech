@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color:  var(--main-color);
+  background-color: var(--main-color);
   box-sizing: border-box;
 }
 
@@ -11,7 +11,7 @@ body {
   --secondary-color: #171616cc;
 }
 
-header  {
+header {
   width: 100%;
   height: 10vh;
   position: relative;
@@ -20,14 +20,14 @@ header  {
   align-items: center;
   font-size: 1em;
   font-family: var(--main-font);
-  color: #fff;;
+  color: #fff;
+  ;
   background-color: var(--secondary-color);
 }
 
-h1,h2,h3,h4,h5,p {
+h1, h2, h3, h4, h5, p {
   font-family: var(--main-font);
 }
-
 
 #menuIcon {
   width: 15%;
@@ -54,12 +54,12 @@ h1,h2,h3,h4,h5,p {
   visibility: hidden;
 }
 
-#menu >  ul {
+#menu>ul {
   margin: 0;
   padding: 0;
 }
 
-#menu > ul > li > a{
+#menu>ul>li>a {
   text-decoration: none;
   font-family: var(--main-font);
 }
@@ -73,57 +73,61 @@ h1,h2,h3,h4,h5,p {
 
 /* confirm text slowshow */
 @keyframes showSlow {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
-#menu > h3 {
+#menu>h3 {
   font-size: 1em;
   color: #000;
 }
-
 
 main {
   height: 80vh;
   width: 100%;
 }
 
-main > section {
+main>section {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-main > section > div:first-of-type {
+main>section>div:first-of-type {
   height: 10vh;
   width: 100%;
   color: #424242;
   text-align: center;
 }
 
-.matches{
-margin-top: 5vh;
-color: #fff;
-height: 50vh;
-width: 70vw;
-border: 2px solid;
-display: flex;
-flex-direction: column;
-align-items: center;
-background-image: url("../images/filterBg.jpg");
-background-size: cover;
-background-repeat: no-repeat;
+.matches {
+  margin-top: 5vh;
+  color: #fff;
+  height: 50vh;
+  width: 70vw;
+  border: 2px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("../images/filterBg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.matches > button {
+.matches>button {
   height: 13%;
-padding: 5px;
-border: none;
-width: 55%;
-background-color: antiquewhite;
-border-radius: 5px;
-color: #363636d9;
-font-weight: 800;
-font-size: 1em;
+  padding: 5px;
+  border: none;
+  width: 55%;
+  background-color: antiquewhite;
+  border-radius: 5px;
+  color: #363636d9;
+  font-weight: 800;
+  font-size: 1em;
 }

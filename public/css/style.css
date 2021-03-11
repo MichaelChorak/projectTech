@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color:  var(--main-color);
+  background-color: var(--main-color);
   box-sizing: border-box;
 }
 
@@ -11,7 +11,7 @@ body {
   --secondary-color: #171616cc;
 }
 
-header  {
+header {
   width: 100%;
   height: 10vh;
   position: relative;
@@ -19,7 +19,8 @@ header  {
   justify-content: center;
   align-items: center;
   font-size: 1em;
-  color: #fff;;
+  color: #fff;
+  ;
   background-color: var(--secondary-color);
 }
 
@@ -48,12 +49,12 @@ header  {
   visibility: hidden;
 }
 
-#menu >  ul {
+#menu>ul {
   margin: 0;
   padding: 0;
 }
 
-#menu > ul > li > a{
+#menu>ul>li>a {
   text-decoration: none;
   font-family: var(--main-font);
 }
@@ -67,24 +68,27 @@ header  {
 
 /* confirm text slowshow */
 @keyframes showSlow {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
-#menu > h3 {
+#menu>h3 {
   font-size: 1em;
   color: #000;
 }
-
-
 
 h1 {
   font-weight: 100;
   font-size: 2em;
 }
 
-h1,h2,h3,h4,p,label{
-      font-family: var(--main-font);
+h1, h2, h3, h4, p, label {
+  font-family: var(--main-font);
 }
 
 /* Eerste section na de header, container voor de overige elementen */
@@ -96,9 +100,8 @@ section:first-of-type {
   position: absolute;
 }
 
-
 /* Styling voor de form op de confirm pagina */
-section:first-of-type > form {
+section:first-of-type>form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -108,7 +111,7 @@ section:first-of-type > form {
 }
 
 /* de 4 knoppen op het formulier */
-section:first-of-type > form > section > p {
+section:first-of-type>form>section>p {
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -116,7 +119,8 @@ section:first-of-type > form > section > p {
   display: inline-flex;
   margin: 1%;
 }
-section:first-of-type > form > div {
+
+section:first-of-type>form>div {
   display: none;
 }
 
@@ -136,7 +140,6 @@ span {
 /* input[type="radio"]{
   display: inline-flex;
 } */
-
 #nextIcons {
   width: 100%;
   height: 20%;
@@ -155,18 +158,16 @@ span {
 
 /* input styling van de form */
 input {
-border: 0;
-outline: 0;
-border-bottom: 2px dotted var(--secondary-color);
-font-size: 1.4rem;
-color: #2d3b08;
-width: 90%;
-margin-bottom: 5%;
-background: none;
-background-color: var(--main-color) !important;
+  border: 0;
+  outline: 0;
+  border-bottom: 2px dotted var(--secondary-color);
+  font-size: 1.4rem;
+  color: #2d3b08;
+  width: 90%;
+  margin-bottom: 5%;
+  background: none;
+  background-color: var(--main-color) !important;
 }
-
-
 
 /* container voor gegevens */
 section:first-of-type {
@@ -178,7 +179,7 @@ section:first-of-type {
   text-align: center;
 }
 
-section:first-of-type > p {
+section:first-of-type>p {
   width: 75%;
   margin: 0;
   position: absolute;
@@ -186,8 +187,6 @@ section:first-of-type > p {
 }
 
 /* intro text sytling */
-
-
 /* section:first-of-type > p {
   font-size: 12px;
   overflow: hidden;
@@ -198,24 +197,34 @@ section:first-of-type > p {
   blink-caret .75s step-end infinite;
   margin-top: -20%;
   } */
-
 /* The typing effect */
 @keyframes typing {
-  from { width: 0 }
-  to { width: 55vw; }
+  from {
+    width: 0
+  }
+
+  to {
+    width: 55vw;
+  }
 }
 
 @keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: orange; }
+  from, to {
+    border-color: transparent
+  }
+
+  50% {
+    border-color: orange;
+  }
 }
 
 /* bevat de h1 */
-section:first-of-type > div > div:nth-of-type(1) {
+section:first-of-type>div>div:nth-of-type(1) {
   text-align: center;
 }
+
 /* hier is de form */
-section:first-of-type > div > div:nth-of-type(2) {
+section:first-of-type>div>div:nth-of-type(2) {
   height: auto;
 }
 
@@ -227,12 +236,11 @@ section:first-of-type > div > div:nth-of-type(2) {
   border-radius: 6px;
   margin: 0;
   -webkit-box-shadow: 0px 4px 20px 0px rgb(129 142 230);
-  -moz-box-shadow: 0px 4px 20px 0px rgba(129,142,230,1);
+  -moz-box-shadow: 0px 4px 20px 0px rgba(129, 142, 230, 1);
   box-shadow: 0px 0px 8px 0px rgb(129 142 230);
   position: absolute;
   bottom: 18px;
   width: 63vw;
-
 }
 
 /* hier komt de animatie voor bevestiving inleveren informatie, confirm */
@@ -253,19 +261,24 @@ section:first-of-type > div > div:nth-of-type(2) {
 }
 
 /* intro text op confirm pagina */
-
-
 @keyframes animationCircle {
-  0%{bottom: 0%; transform: scale(0) rotate3d(0deg);}
-  100%{bottom: 50%; transform: scale(1) rotate3d(-1, 1, 0, 360deg);}
-}
+  0% {
+    bottom: 0%;
+    transform: scale(0) rotate3d(0deg);
+  }
 
+  100% {
+    bottom: 50%;
+    transform: scale(1) rotate3d(-1, 1, 0, 360deg);
+  }
+}
 
 /* Dit is de container voor confirm */
 .centrum {
   text-align: center;
 }
-.centrum > h3 {
+
+.centrum>h3 {
   position: absolute;
   bottom: 30vh;
   left: calc(50% - (113px /2));
@@ -275,7 +288,7 @@ section:first-of-type > div > div:nth-of-type(2) {
   animation-timing-function: ease-in;
 }
 
-form > button {
+form>button {
   position: absolute;
   bottom: 10vh;
   left: 30%;
@@ -294,7 +307,6 @@ form > button {
 }
 
 /* Hier begint de CSS styling for de gebruikers lijst -SECTION- */
-
 .gebruikerSection {
   width: 100% !important;
   flex-direction: column !important;
@@ -302,6 +314,6 @@ form > button {
   justify-content: flex-start !important;
 }
 
-.gebruikerSection > ul > li {
+.gebruikerSection>ul>li {
   list-style-type: none;
 }
