@@ -7,7 +7,6 @@ const app = express();
 const port =  process.env.PORT || 5000;
 const userSchema = require('./schema/user-schema');
 const bodyParser = require('body-parser');
-var http = require("http");
 
 // const routes =  require('./routes/router');
 
