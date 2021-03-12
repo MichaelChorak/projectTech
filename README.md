@@ -47,9 +47,10 @@ My code already includes a connection with the database, but my credentials has 
 ---
 
 ## Features
-
-- [x] Add your information to a database to be found for other users
-- [x] Use the filter system to find certain users
+ ![Home](https://github.com/MichaelChorak/projectTech/blob/main/public/images/beginScherm.PNG)
+  ![Home](https://github.com/MichaelChorak/projectTech/blob/main/public/images/formulier.PNG)
+   ![Home](https://github.com/MichaelChorak/projectTech/blob/main/public/images/zoeken.PNG)
+    ![Home](https://github.com/MichaelChorak/projectTech/blob/main/public/images/alleGebruikers.PNG)
 
 ## Used sources
 
