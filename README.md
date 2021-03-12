@@ -1,7 +1,10 @@
  ![Players connect banner](https://github.com/MichaelChorak/projectTech/blob/main/public/images/banner.png)
+> __Players Connection__ is een web applicatie speciaal gemaakt voor mensen die op zoek zijn naar een partner om bordspellen mee te spellen.
+bordspellen kunnen erg langdradig zijn en verschillen enorm qua categorie. Dus het is logisch als je niet snel mensen om je heen vindt die graag zo'n spel met je wilt spelen.
 
-_Players connection_ is een applicatie waar mensen hen ideale partner kunnen vinden om een bordspel mee te spelen.
-Ik bouw hier voor een filtersysteem waardoor mensen gemakkelijker de perfecte match zullen vinden.
+>__Players Connection__ verhelpt dit probleem door te kunnen zoeken op categorie en afstand. Bekijk wie ook geintreseerd zijn in deze spellen en kom in contact.
+Spelers kunnen informatie toevoegen, deze informatie komt terecht in een spelers lijst. Andere fanatieken spelers kunnen zoeken op basis van deze informatie en zo kom jij terecht in hun zoekresultaten.
+
 
 ---
 
@@ -44,9 +47,10 @@ My code already includes a connection with the database, but my credentials has 
 ---
 
 ## Features
-
-- [x] Add your information to a database to be found for other users
-- [x] Use the filter system to find certain users
+ ![Home](https://github.com/MichaelChorak/projectTech/blob/main/public/images/beginScherm.PNG)
+  ![Home](https://github.com/MichaelChorak/projectTech/blob/main/public/images/formulier.PNG)
+   ![Home](https://github.com/MichaelChorak/projectTech/blob/main/public/images/zoeken.PNG)
+    ![Home](https://github.com/MichaelChorak/projectTech/blob/main/public/images/alleGebruikers.PNG)
 
 ## Used sources
 
