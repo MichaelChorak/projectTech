@@ -4,7 +4,7 @@ const lodash = require('lodash');
 const exphbs = require('express-handlebars');
 const mongoose = require('mongoose');
 const app = express();
-const port =  process.env.PORT || 5000;
+const port = process.env.PORT || 5000;
 const userSchema = require('./schema/user-schema');
 const bodyParser = require('body-parser');
 
@@ -14,7 +14,7 @@ const bodyParser = require('body-parser');
 const {
   MongoClient
 } = require('mongodb');
-const uri = `mongodb+srv://maikiew:${process.env.DB_PASS}%21@cluster0.fiihw.mongodb.net/test?authSource=admin&replicaSet=atlas-r4sakp-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true`;
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}%21@cluster0.fiihw.mongodb.net/test?authSource=admin&replicaSet=atlas-r4sakp-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true`;
 const db = new MongoClient(uri, {
   useUnifiedTopology: true
 });
@@ -28,10 +28,10 @@ async function run() {
     // Connect the client to the server
     await db.connect();
     // Establish and verify connection
-    await db.db("maikiew").command({
+    await db.db("users").command({
       ping: 1
     });
-    console.log("Connected successfully to server");
+    console.log("Connected successfully to serverssss");
   } finally {
     // Ensures that the client will close when you finish/error
     await db.close();
@@ -55,6 +55,15 @@ app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
 
+//homepagina render
+app.get('/', (req, res) => {
+  res.render('home')
+});
+//index pagina render
+app.get('/index', (req, res) => {
+  res.render('landingspagina');
+})
+
 
 // We maken connectie met de database, gaan naar db users en in users zoeken we collection customers
 // Daarna wordt dit een object bestaande uit een array met alle customers en deze worden gesorteerd op naam
@@ -67,6 +76,8 @@ app.get('/gebruikersdb', async (req, res) => {
         naam: 1
       }
     }).toArray();
+
+    console.log(gebruikers);
     res.render('gebruikers', {
       title: "Alle deelnemers op een rij",
       gebruikers
@@ -75,11 +86,22 @@ app.get('/gebruikersdb', async (req, res) => {
 });
 
 
-//homepagina render
-app.get('/', (req, res) => {
+//we wrappen de button van delete(in gebruikers.hbs) in een form met deze post request.
+app.post('/gebruikersdb', async (req, res) => {
+  MongoClient.connect(uri, async function(err, db) {
+    let dbo = db.db("users");
+    gebruikers = await dbo.collection('customers').find({}, {
+    }).toArray();
 
-  res.render('home')
+    let myquery = { name: req.body.name};
+  dbo.collection("customers").deleteOne(myquery, await function(err, obj) {
+    if (err) throw err;
+    console.log("1 document deleted");
+    db.close();
+    });
+  });
 });
+
 
 
 //zoek naar tegenstanders
@@ -96,7 +118,6 @@ app.get('/zoeken', async (req, res) => {
     });
   });
 });
-
 
 // hier posten we de zoek formulier naar matches en geven de waardes mee als een array met objecten
 app.post('/zoeken', async (req, res) => {
@@ -117,14 +138,9 @@ app.post('/zoeken', async (req, res) => {
     res.render('matches', {
       renderData,
       provincies
-    })
-  })
-})
-
-
-app.get('/index', (req, res) => {
-  res.render('landingspagina');
-})
+    });
+  });
+});
 
 //register render
 app.get('/register', async (req, res) => {
@@ -140,6 +156,9 @@ app.get('/register', async (req, res) => {
     });
   });
 });
+
+//wijzigen van gebruiker data
+
 
 
 //Hier kunnen mensen informatie invullen en wordt geplaatst in de database users en in de collection 'customers' **form**

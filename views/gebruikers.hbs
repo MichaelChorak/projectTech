@@ -4,18 +4,25 @@
 
 <section>
   <h4>Alle spelers op een rijtje</h4>
-<table>
+
   <table>
     <tr>
       <th>Naam</th>
       <th>Categorie</th>
       <th>Provincie</th>
+      <th>Bewerken</th>
     </tr>
           {{#each gebruikers}}
     <tr>
       <td>{{this.naam}}</td>
       <td>{{this.favspel}}</td>
       <td>{{this.provincie}}</td>
+      <td>
+        <form class="" action="/gebruikersdb" method="post">
+        <td><button type="submit" name="button" class="btnDelete">Delete</button>
+        </form>
+        <button type="button" name="button" class="btnEdit">Edit</button>
+
     </tr>
         {{/each}}
   </table>

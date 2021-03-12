@@ -58,3 +58,17 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+
+.btnEdit {
+  background-color: blue;
+  color: #ffffff;
+  border: none;
+  outline: none;
+}
+
+.btnDelete {
+  background-color: red;
+  color: #ffffff;
+  border: none;
+  outline: none;
+}
