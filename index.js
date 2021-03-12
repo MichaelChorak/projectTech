@@ -157,7 +157,7 @@ app.get('/register', async (req, res) => {
   });
 });
 
-//wijzigen van gebruiker data
+//wijzigen van gebruiker data's
 
 
 
