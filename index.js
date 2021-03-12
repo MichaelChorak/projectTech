@@ -93,11 +93,10 @@ app.post('/gebruikersdb', async (req, res) => {
     gebruikers = await dbo.collection('customers').find({}, {
     }).toArray();
 
-    let myquery = { name: req.body.name};
-  dbo.collection("customers").deleteOne(myquery, await function(err, obj) {
+    let deleteQuery = { name: req.body.name};
+  dbo.collection("customers").deleteOne(deleteQuery, await function(err, obj) {
     if (err) throw err;
     console.log("1 document deleted");
-    db.close();
     });
   });
 });

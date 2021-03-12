@@ -50,9 +50,6 @@ web_modules/
 # Optional npm cache directory
 .npm
 
-#dotenv variables files
-.env
-.env.test
 
 # Optional eslint cache
 .eslintcache

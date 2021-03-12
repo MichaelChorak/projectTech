@@ -77,19 +77,17 @@ header {
     opacity: 1;
   }
 }
+ section {
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   align-items: center;
+   font-family: var(--main-font);
+ }
 
 #menu>h3 {
   font-size: 1em;
   color: #000;
-}
-
-main>section:first-of-type {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  height: 50vh;
-  width: 100%;
 }
 
 form {
