@@ -1,10 +1,6 @@
  ![Players connect banner](https://github.com/MichaelChorak/projectTech/blob/main/public/images/banner.png)
-> __Players Connection__ is een web applicatie speciaal gemaakt voor mensen die op zoek zijn naar een partner om bordspellen mee te spellen.
-bordspellen kunnen erg langdradig zijn en verschillen enorm qua categorie. Dus het is logisch als je niet snel mensen om je heen vindt die graag zo'n spel met je wilt spelen.
 
->__Players Connection__ verhelpt dit probleem door te kunnen zoeken op categorie en afstand. Bekijk wie ook geintreseerd zijn in deze spellen en kom in contact.
-Spelers kunnen informatie toevoegen, deze informatie komt terecht in een spelers lijst. Andere fanatieken spelers kunnen zoeken op basis van deze informatie en zo kom jij terecht in hun zoekresultaten.
-
+_Players connection_ is an application where u can register your information, tell them what boardgames u like to play and where you live. When u succesfully added your information, you can search for other players based on their interests. Match up with them, meet up & and play those boardgames!
 
 ---
 
@@ -18,10 +14,12 @@ Spelers kunnen informatie toevoegen, deze informatie komt terecht in een spelers
 
 ---
 
-## Core of concept
-The core concept of *Players Connection* exists out of a certain UX design made in HTML/CSS/JS where u can add information about you to let other uses fill out the search forms and find specific users. 
+## Concept
 
-So basically it's a filter system.
+### Find your gaming buddy!
+
+__Players Connect__ is an application where u can find a person to play boardgames with you. You can add your information, such like: name, adress, age, location and which category boardgames u like to play. After u registered to __Players Connect__ u can search for other players, just choose which category u would like to play, where they from and find your partner to beat!
+
 
 ---
 
@@ -34,34 +32,12 @@ With Github it's very to install these files to your computer. I will show you t
 
 ---
 
-## How to make it work?
-> Since it's a application which makes use of a database. You need to setup your own database & database connection
-
-There are different databases which could work, but this project is based on NodeJS __plus__ Mongoose.
-So i strongly advice you to read this document:  [Mongoose ~ Getting started](https://mongoosejs.com/docs/)
-
-I can also strongly recommend to use MongoDBCompas to easily check out what's happening behind the scenes and have a quick view at your Database, Schemes & more.
-
-My code already includes a connection with the database, but my credentials has to be replaced with yours. My password is stored in a .env file so it's not visible for outsiders. To make a connection, just create your own .env file with your credentials and you should be ready to go.
-
----
-
 ## Features
- ![Home](https://github.com/MichaelChorak/projectTech/blob/main/public/images/beginScherm.PNG)
-  ![Home](https://github.com/MichaelChorak/projectTech/blob/main/public/images/formulier.PNG)
-   ![Home](https://github.com/MichaelChorak/projectTech/blob/main/public/images/zoeken.PNG)
-    ![Home](https://github.com/MichaelChorak/projectTech/blob/main/public/images/alleGebruikers.PNG)
 
-## Used sources
+- [x] Add your information to the list, tell people in what games you are interested and where u live and be found!
+- [x] Search for other players all over the Netherlands, search by category boardgames and location.
+- [x] Lookup all current players in the players list, see who are playing!
 
-* [Mongoose](https://mongoosejs.com/docs/)
-* [CRUD operations Mongoose](https://docs.mongodb.com/manual/crud/)
-* [dotenv](https://www.npmjs.com/package/dotenv)
-* [Express Handlebars](https://www.npmjs.com/package/express-handlebars)
-* [Handlebars template engine](https://handlebarsjs.com/)
-* [Bodyparser](https://www.npmjs.com/package/body-parser)
-
-> Resources moeten nog APA: https://www.scribbr.nl/bronnengenerator/apa/
 
 ## Licenses
 
